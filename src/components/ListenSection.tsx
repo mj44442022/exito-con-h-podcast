@@ -1,58 +1,26 @@
 
-import { Headphones, Smartphone, Radio, Globe } from "lucide-react";
+import { Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ListenSection = () => {
-  const platforms = [
-    {
-      name: "Spotify",
-      icon: <Headphones className="h-6 w-6" />,
-      color: "bg-green-500 hover:bg-green-600",
-      description: "Escucha en Spotify"
-    },
-    {
-      name: "Apple Podcasts",
-      icon: <Smartphone className="h-6 w-6" />,
-      color: "bg-gray-800 hover:bg-gray-900",
-      description: "Disponible en Apple Podcasts"
-    },
-    {
-      name: "Google Podcasts",
-      icon: <Radio className="h-6 w-6" />,
-      color: "bg-blue-500 hover:bg-blue-600",
-      description: "Encuentra en Google Podcasts"
-    },
-    {
-      name: "Web Player",
-      icon: <Globe className="h-6 w-6" />,
-      color: "bg-purple-500 hover:bg-purple-600",
-      description: "Escucha online"
-    }
-  ];
-
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Escucha donde prefieras
+            Escucha en Spotify
           </h2>
           <p className="text-xl text-gray-600 mb-12">
-            Disponible en todas las principales plataformas de podcasts
+            Tu podcast favorito sobre el éxito humano, disponible en Spotify
           </p>
 
-          {/* Platform buttons */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {platforms.map((platform, index) => (
-              <Button
-                key={index}
-                className={`${platform.color} text-white h-auto p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col items-center space-y-3`}
-              >
-                {platform.icon}
-                <span className="font-semibold">{platform.name}</span>
-                <span className="text-sm opacity-90">{platform.description}</span>
-              </Button>
-            ))}
+          {/* Spotify button */}
+          <div className="mb-16">
+            <Button className="bg-green-500 hover:bg-green-600 text-white h-auto p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col items-center space-y-4 mx-auto">
+              <Headphones className="h-8 w-8" />
+              <span className="font-semibold text-xl">Spotify</span>
+              <span className="text-base opacity-90">Escucha todos los episodios</span>
+            </Button>
           </div>
 
           {/* Newsletter signup */}
