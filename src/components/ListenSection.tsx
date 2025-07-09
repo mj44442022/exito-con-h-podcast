@@ -1,8 +1,30 @@
 
 import { Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const ListenSection = () => {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSpotifyClick = () => {
+    // Replace this URL with your actual Spotify podcast URL
+    const spotifyUrl = "https://open.spotify.com/show/YOUR_PODCAST_ID";
+    window.open(spotifyUrl, "_blank");
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      // Here you would integrate with your newsletter service (e.g., Mailchimp, ConvertKit, etc.)
+      console.log("Suscribing email:", email);
+      setIsSubscribed(true);
+      setEmail("");
+      // Reset after 3 seconds
+      setTimeout(() => setIsSubscribed(false), 3000);
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50">
       <div className="container mx-auto px-6">
@@ -16,7 +38,10 @@ const ListenSection = () => {
 
           {/* Spotify button */}
           <div className="mb-16">
-            <Button className="bg-green-500 hover:bg-green-600 text-white h-auto p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col items-center space-y-4 mx-auto">
+            <Button 
+              onClick={handleSpotifyClick}
+              className="bg-green-500 hover:bg-green-600 text-white h-auto p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col items-center space-y-4 mx-auto cursor-pointer"
+            >
               <Headphones className="h-8 w-8" />
               <span className="font-semibold text-xl">Spotify</span>
               <span className="text-base opacity-90">Escucha todos los episodios</span>
@@ -31,16 +56,29 @@ const ListenSection = () => {
             <p className="text-gray-600 mb-8">
               Suscríbete para recibir notificaciones de nuevos episodios y contenido exclusivo sobre redefinir el éxito.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="flex-1 px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-              />
-              <Button className="bg-gradient-to-r from-orange-500 to-teal-500 hover:from-orange-600 hover:to-teal-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105">
-                Suscribirse
-              </Button>
-            </div>
+            
+            {isSubscribed ? (
+              <div className="text-green-600 font-semibold text-lg">
+                ¡Gracias por suscribirte! 🎉
+              </div>
+            ) : (
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Tu correo electrónico"
+                  required
+                  className="flex-1 px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                />
+                <Button 
+                  type="submit"
+                  className="bg-gradient-to-r from-orange-500 to-teal-500 hover:from-orange-600 hover:to-teal-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+                >
+                  Suscribirse
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>
