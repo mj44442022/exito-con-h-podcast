@@ -8,9 +8,7 @@ const ListenSection = () => {
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   const handleSpotifyClick = () => {
-    // Replace this URL with your actual Spotify podcast URL
-    const spotifyUrl = "https://open.spotify.com/show/YOUR_PODCAST_ID";
-    window.open(spotifyUrl, "_blank");
+    window.open("https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl", "_blank");
   };
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {

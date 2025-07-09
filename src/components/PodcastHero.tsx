@@ -3,6 +3,14 @@ import { Headphones, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PodcastHero = () => {
+  const handleListenNowClick = () => {
+    window.open("https://open.spotify.com/episode/20qy4jVvLf250PMyNOWu5L?si=j0CC7scpRwOmOKxHFiPGNA", "_blank");
+  };
+
+  const handleLatestEpisodesClick = () => {
+    window.open("https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl", "_blank");
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-white to-teal-50 overflow-hidden">
       {/* Background decoration */}
@@ -49,16 +57,18 @@ const PodcastHero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
+              onClick={handleListenNowClick}
               size="lg" 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Play className="mr-2 h-5 w-5" />
               Escuchar Ahora
             </Button>
             <Button 
+              onClick={handleLatestEpisodesClick}
               variant="outline" 
               size="lg"
-              className="border-2 border-teal-500 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+              className="border-2 border-teal-500 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Headphones className="mr-2 h-5 w-5" />
               Últimos Episodios
