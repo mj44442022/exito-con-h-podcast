@@ -46,14 +46,13 @@ const PodcastHero = () => {
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Para quienes buscan crecer profesionalmente sin perder su esencia
+            Define tu propia versión del éxito y vive según tus prioridades
           </p>
           
           {/* Value proposition */}
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Si sientes que el "éxito tradicional" no te llena completamente, 
-            este podcast es para ti. Descubre cómo otros jóvenes profesionales están redefiniendo 
-            qué significa triunfar en la vida.
+            Reflexiones y conversaciones que te ayudan a descubrir qué significa realmente 
+            triunfar para ti. Porque al final se trata de TUS prioridades, TUS valores, TU vida.
           </p>
 
           {/* Host info */}
