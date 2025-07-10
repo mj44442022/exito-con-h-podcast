@@ -40,15 +40,22 @@ const PodcastHero = () => {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
-            El Éxito con una 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-teal-600"> H Humana</span>
+            ¿Y si el éxito 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-teal-600"> fuera diferente?</span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Un podcast que cuestiona la mirada convencional del éxito
+            Para quienes buscan crecer profesionalmente sin perder su esencia
           </p>
           
+          {/* Value proposition */}
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            Si tienes entre 20 y 35 años y sientes que el "éxito tradicional" no te llena completamente, 
+            este podcast es para ti. Descubre cómo otros jóvenes profesionales están redefiniendo 
+            qué significa triunfar en la vida.
+          </p>
+
           {/* Host info */}
           <p className="text-lg text-gray-500 mb-12">
             Conducido por <span className="font-semibold text-gray-700">Majo Corrales</span>
@@ -71,7 +78,7 @@ const PodcastHero = () => {
               className="border-2 border-teal-500 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Headphones className="mr-2 h-5 w-5" />
-              Últimos Episodios
+              Más Episodios
             </Button>
           </div>
         </div>

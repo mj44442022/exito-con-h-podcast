@@ -28,10 +28,10 @@ const ListenSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Escucha en Spotify
+            Escucha cuando quieras
           </h2>
           <p className="text-xl text-gray-600 mb-12">
-            Tu podcast favorito sobre el éxito humano, disponible en Spotify
+            Episodios de 20-30 minutos perfectos para tu commute, workout o break del trabajo
           </p>
 
           {/* Spotify button */}
@@ -41,23 +41,24 @@ const ListenSection = () => {
               className="bg-green-500 hover:bg-green-600 text-white h-auto p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col items-center space-y-4 mx-auto cursor-pointer"
             >
               <Headphones className="h-8 w-8" />
-              <span className="font-semibold text-xl">Spotify</span>
-              <span className="text-base opacity-90">Escucha todos los episodios</span>
+              <span className="font-semibold text-xl">Disponible en Spotify</span>
+              <span className="text-base opacity-90">Todos los episodios gratis</span>
             </Button>
           </div>
 
           {/* Newsletter signup */}
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              No te pierdas ningún episodio
+              Únete a la comunidad
             </h3>
             <p className="text-gray-600 mb-8">
-              Suscríbete para recibir notificaciones de nuevos episodios y contenido exclusivo sobre redefinir el éxito.
+              Recibe notificaciones de nuevos episodios y contenido exclusivo sobre cómo construir 
+              una carrera exitosa que realmente te llene.
             </p>
             
             {isSubscribed ? (
               <div className="text-green-600 font-semibold text-lg">
-                ¡Gracias por suscribirte! 🎉
+                ¡Bienvenido/a a la comunidad! 🎉
               </div>
             ) : (
               <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -73,7 +74,7 @@ const ListenSection = () => {
                   type="submit"
                   className="bg-gradient-to-r from-orange-500 to-teal-500 hover:from-orange-600 hover:to-teal-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
                 >
-                  Suscribirse
+                  Unirme
                 </Button>
               </form>
             )}

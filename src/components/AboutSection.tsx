@@ -9,7 +9,7 @@ const AboutSection = () => {
           {/* Main question */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
-              ¿Qué es el éxito?
+              Tu carrera no tiene que costarte tu bienestar
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-teal-500 mx-auto mb-8"></div>
           </div>
@@ -17,14 +17,14 @@ const AboutSection = () => {
           {/* Description */}
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100 mb-16">
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center mb-8">
-              <span className="font-semibold text-orange-600">¿Qué metas realmente nos llenan?</span> 
-              {" "}Estas son las preguntas que buscamos responder en este podcast. 
-              Acompáñanos a ponerle una H al éxito, una H humana, al conocer a personas que 
-              cuestionan la mirada convencional del éxito.
+              <span className="font-semibold text-orange-600">¿Sientes que "tener éxito" significa sacrificar lo que realmente te importa?</span> 
+              {" "}Si estás cansado/a de la presión constante por cumplir con expectativas que no elegiste, 
+              este podcast te va a resonar profundamente.
             </p>
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
-              Al escuchar sus experiencias y valoraciones, te invitamos a cuestionar qué significa 
-              el éxito para ti y <span className="font-semibold text-teal-600">repensar lo que es más importante en la vida.</span>
+              Aquí conocerás a jóvenes profesionales que están construyendo carreras exitosas 
+              <span className="font-semibold text-teal-600"> sin renunciar a sus valores, relaciones y bienestar mental.</span> 
+              {" "}Es tu invitación a cuestionar las reglas del juego y crear tu propia definición de éxito.
             </p>
           </div>
 
@@ -34,9 +34,9 @@ const AboutSection = () => {
               <div className="bg-gradient-to-br from-orange-100 to-orange-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg transition-all duration-300">
                 <Heart className="h-10 w-10 text-orange-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Perspectiva Humana</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Éxito Auténtico</h3>
               <p className="text-gray-600 leading-relaxed">
-                Exploramos el éxito desde una mirada más humana y auténtica, más allá de los logros convencionales.
+                Descubre cómo profesionales de tu edad están triunfando sin comprometer su salud mental ni sus relaciones.
               </p>
             </div>
 
@@ -46,7 +46,7 @@ const AboutSection = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Historias Reales</h3>
               <p className="text-gray-600 leading-relaxed">
-                Conoce a personas que han redefinido el éxito en sus propios términos y vidas.
+                Conversaciones genuinas con personas que han encontrado su propio camino al éxito profesional y personal.
               </p>
             </div>
 
@@ -54,9 +54,9 @@ const AboutSection = () => {
               <div className="bg-gradient-to-br from-purple-100 to-purple-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg transition-all duration-300">
                 <Lightbulb className="h-10 w-10 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Reflexión Profunda</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Herramientas Prácticas</h3>
               <p className="text-gray-600 leading-relaxed">
-                Te invitamos a cuestionar y repensar lo que realmente importa en tu vida.
+                Estrategias concretas para construir una carrera que te llene, sin caer en el burnout o la ansiedad constante.
               </p>
             </div>
           </div>
