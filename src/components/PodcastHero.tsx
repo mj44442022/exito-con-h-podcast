@@ -51,7 +51,7 @@ const PodcastHero = () => {
           
           {/* Value proposition */}
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Si tienes entre 20 y 35 años y sientes que el "éxito tradicional" no te llena completamente, 
+            Si sientes que el "éxito tradicional" no te llena completamente, 
             este podcast es para ti. Descubre cómo otros jóvenes profesionales están redefiniendo 
             qué significa triunfar en la vida.
           </p>
@@ -78,7 +78,7 @@ const PodcastHero = () => {
               className="border-2 border-teal-500 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Headphones className="mr-2 h-5 w-5" />
-              Más Episodios
+              Últimos Episodios
             </Button>
           </div>
         </div>

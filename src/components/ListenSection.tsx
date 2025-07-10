@@ -1,26 +1,14 @@
 
-import { Headphones } from "lucide-react";
+import { Headphones, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
 const ListenSection = () => {
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
   const handleSpotifyClick = () => {
     window.open("https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl", "_blank");
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      // Here you would integrate with your newsletter service (e.g., Mailchimp, ConvertKit, etc.)
-      console.log("Suscribing email:", email);
-      setIsSubscribed(true);
-      setEmail("");
-      // Reset after 3 seconds
-      setTimeout(() => setIsSubscribed(false), 3000);
-    }
+  const handleInstagramClick = () => {
+    window.open("https://instagram.com/exitoconh", "_blank");
   };
 
   return (
@@ -46,38 +34,42 @@ const ListenSection = () => {
             </Button>
           </div>
 
-          {/* Newsletter signup */}
-          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
+          {/* Instagram follow */}
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100 mb-16">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              Únete a la comunidad
+              Síguenos en Instagram
             </h3>
             <p className="text-gray-600 mb-8">
-              Recibe notificaciones de nuevos episodios y contenido exclusivo sobre cómo construir 
-              una carrera exitosa que realmente te llene.
+              Únete a nuestra comunidad en @exitoconh para contenido exclusivo, 
+              reflexiones diarias y conectar con otros que están redefiniendo el éxito.
             </p>
             
-            {isSubscribed ? (
-              <div className="text-green-600 font-semibold text-lg">
-                ¡Bienvenido/a a la comunidad! 🎉
-              </div>
-            ) : (
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Tu correo electrónico"
-                  required
-                  className="flex-1 px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                />
-                <Button 
-                  type="submit"
-                  className="bg-gradient-to-r from-orange-500 to-teal-500 hover:from-orange-600 hover:to-teal-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
-                >
-                  Unirme
-                </Button>
-              </form>
-            )}
+            <Button 
+              onClick={handleInstagramClick}
+              className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center space-x-2 mx-auto"
+            >
+              <Instagram className="h-5 w-5" />
+              <span>Seguir @exitoconh</span>
+            </Button>
+          </div>
+
+          {/* Spotify Embed */}
+          <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+              Escucha directamente aquí
+            </h3>
+            <div className="w-full max-w-2xl mx-auto">
+              <iframe 
+                style={{borderRadius:"12px"}} 
+                src="https://open.spotify.com/embed/show/58LT1VZda7xCGoWH8SFaBl?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

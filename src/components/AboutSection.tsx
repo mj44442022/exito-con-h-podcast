@@ -36,7 +36,7 @@ const AboutSection = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Éxito Auténtico</h3>
               <p className="text-gray-600 leading-relaxed">
-                Descubre cómo profesionales de tu edad están triunfando sin comprometer su salud mental ni sus relaciones.
+                Descubre cómo profesionales están triunfando sin comprometer su salud mental ni sus relaciones.
               </p>
             </div>
 
