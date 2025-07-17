@@ -1,8 +1,12 @@
 
 import { Headphones, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSelector from "./LanguageSelector";
 
 const PodcastHero = () => {
+  const { t } = useLanguage();
+
   const handleListenNowClick = () => {
     window.open("https://open.spotify.com/episode/20qy4jVvLf250PMyNOWu5L?si=j0CC7scpRwOmOKxHFiPGNA", "_blank");
   };
@@ -13,6 +17,11 @@ const PodcastHero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-white to-teal-50 overflow-hidden">
+      {/* Language Selector - positioned absolutely in top right */}
+      <div className="absolute top-6 right-6 z-20">
+        <LanguageSelector />
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full blur-3xl"></div>
@@ -40,24 +49,25 @@ const PodcastHero = () => {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
-            ¿Y si el éxito 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-teal-600"> fuera diferente?</span>
+            {t('hero.question').split(' fuera diferente?')[0]}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-teal-600">
+              {t('hero.question').includes('fuera diferente') ? 'fuera diferente?' : 'was different?'}
+            </span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Define tu propia versión del éxito y vive según tus prioridades
+            {t('hero.subtitle')}
           </p>
           
           {/* Value proposition */}
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Reflexiones y conversaciones que te ayudan a descubrir qué significa realmente 
-            triunfar para ti. Porque al final se trata de TUS prioridades, TUS valores, TU vida.
+            {t('hero.description')}
           </p>
 
           {/* Host info */}
           <p className="text-lg text-gray-500 mb-12">
-            Conducido por <span className="font-semibold text-gray-700">Majo Corrales</span>
+            {t('hero.host')} <span className="font-semibold text-gray-700">Majo Corrales</span>
           </p>
 
           {/* CTA Buttons */}
@@ -68,7 +78,7 @@ const PodcastHero = () => {
               className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Play className="mr-2 h-5 w-5" />
-              Escuchar Ahora
+              {t('hero.listenNow')}
             </Button>
             <Button 
               onClick={handleLatestEpisodesClick}
@@ -77,7 +87,7 @@ const PodcastHero = () => {
               className="border-2 border-teal-500 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Headphones className="mr-2 h-5 w-5" />
-              Últimos Episodios
+              {t('hero.latestEpisodes')}
             </Button>
           </div>
         </div>
