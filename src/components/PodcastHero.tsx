@@ -49,9 +49,9 @@ const PodcastHero = () => {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
-            {t('hero.question').split(' fuera diferente?')[0]}{' '}
+            {t('hero.question').split(' ').slice(0, -2).join(' ')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-teal-600">
-              {t('hero.question').includes('fuera diferente') ? 'fuera diferente?' : 'was different?'}
+              {t('hero.question').split(' ').slice(-2).join(' ')}
             </span>
           </h1>
           
