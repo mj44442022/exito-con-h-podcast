@@ -1,4 +1,5 @@
 
+
 import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -43,8 +44,8 @@ const ListenSection = () => {
               Síguenos en Instagram
             </h3>
             <p className="text-gray-600 mb-8">
-              Únete a nuestra comunidad en @exitoconh para contenido exclusivo, 
-              reflexiones diarias y conectar con otros que están redefiniendo el éxito.
+              Únete a nuestra comunidad en @exitoconh para contenido exclusivo 
+              y conectar con otros que están redefiniendo el éxito.
             </p>
             
             <Button 
@@ -62,3 +63,4 @@ const ListenSection = () => {
 };
 
 export default ListenSection;
+
