@@ -58,7 +58,7 @@ const HostSection = () => {
                 <a
                   href="https://www.linkedin.com/in/majocorralesv/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary-foreground/20 font-body text-sm font-medium text-primary-foreground transition-all duration-300 hover:bg-primary-foreground/10 hover:border-primary-foreground/40"
                 >
                   <Linkedin className="h-4 w-4" />

@@ -35,7 +35,7 @@ const Footer = () => {
             <a
               href="https://www.linkedin.com/in/majocorralesv/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="w-10 h-10 rounded-full border border-background/15 flex items-center justify-center transition-all duration-300 hover:border-secondary hover:text-secondary"
             >
               <Linkedin className="h-4 w-4" />
