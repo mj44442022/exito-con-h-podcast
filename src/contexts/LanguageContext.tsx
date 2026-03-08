@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'es' | 'en';
@@ -44,67 +43,117 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   );
 };
 
-const translations = {
+const translations: Record<Language, Record<string, string>> = {
   es: {
-    // Hero Section
-    'hero.question': '¿Y si el éxito fuera diferente?',
-    'hero.subtitle': 'Define tu propia versión del éxito y vive según tus prioridades',
-    'hero.description': 'Reflexiones y conversaciones que te ayudan a descubrir qué significa realmente triunfar para ti. Porque al final se trata de TUS prioridades, TUS valores, TU vida.',
-    'hero.host': 'Conducido por',
-    'hero.listenNow': 'Escuchar Ahora',
-    'hero.latestEpisodes': 'Últimos Episodios',
-    
-    // About Section
-    'about.title': 'Elige tu propia versión del éxito',
-    'about.question': '¿Te has preguntado si el éxito que persigues es realmente el tuyo?',
-    'about.description1': 'Este podcast te invita a reflexionar sobre lo que realmente significa triunfar de acuerdo a TUS prioridades, TUS valores, TU vida.',
-    'about.description2': 'A través de conversaciones con jóvenes profesionales y mentores experimentados,',
-    'about.description2Bold': 'descubrirás que puedes definir tu propia versión del éxito',
-    'about.description2End': 'y vivir de acuerdo a ella, sin importar lo que digan los demás.',
-    'about.feature1Title': 'Tu Propia Definición',
-    'about.feature1Desc': 'Reflexiones que te ayudan a descubrir qué significa realmente el éxito para ti, basado en tus valores únicos.',
-    'about.feature2Title': 'Diversas Perspectivas',
-    'about.feature2Desc': 'Entrevistas auténticas con jóvenes profesionales y mentores que han encontrado su camino único al éxito.',
-    'about.feature3Title': 'Vive Según Tus Prioridades',
-    'about.feature3Desc': 'Inspiración práctica para construir una vida y carrera alineadas con lo que realmente te importa.',
-    
-    // Listen Section
-    'listen.title': 'Escucha cuando quieras',
-    'listen.subtitle': 'Episodios de 20-30 minutos perfectos para tu commute, workout o break del trabajo',
-    'listen.allEpisodes': 'Todos los episodios disponibles gratis',
-    'listen.followTitle': 'Síguenos en Instagram',
-    'listen.followDesc': 'Únete a nuestra comunidad en @exitoconh para contenido exclusivo y conectar con otros que están redefiniendo el éxito.',
-    'listen.followButton': 'Seguir @exitoconh'
+    // Nav
+    'nav.listen': 'Escuchar',
+    'nav.about': 'Sobre el podcast',
+    'nav.host': 'La conductora',
+    'nav.newsletter': 'Newsletter',
+
+    // Hero
+    'hero.title': 'Éxito con H',
+    'hero.subtitle': 'El podcast donde el éxito se escribe con historia, con hambre y con humanidad.',
+    'hero.cta': 'Escuchar ahora',
+    'hero.cta2': 'Suscribirse al newsletter',
+
+    // About
+    'about.label': 'De qué trata',
+    'about.text': 'Éxito con H es para las que rompieron el molde pero siguen buscando su forma. Conversaciones honestas sobre carrera, identidad, ambición y vida bien vivida.',
+    'about.pillar1': 'Mentalidad',
+    'about.pillar1desc': 'Redefine lo que el éxito significa para ti, lejos del ruido.',
+    'about.pillar2': 'Comunidad',
+    'about.pillar2desc': 'Historias de latinas que construyen en sus propios términos.',
+    'about.pillar3': 'Estrategia',
+    'about.pillar3desc': 'Datos, frameworks y herramientas para tomar decisiones con claridad.',
+
+    // Episodes
+    'episodes.label': 'Episodios recientes',
+    'episodes.listen': 'Escuchar',
+    'episodes.min': 'min',
+    'episodes.ep1.title': 'El éxito que nadie te enseñó a buscar',
+    'episodes.ep1.desc': '¿Qué pasa cuando logras todo lo que te dijeron que querías y aún sientes que falta algo?',
+    'episodes.ep2.title': 'Ser latina en corporate America',
+    'episodes.ep2.desc': 'Navegando espacios donde eres la única que se parece a ti, sin perder tu esencia.',
+    'episodes.ep3.title': 'Datos, decisiones y la vida real',
+    'episodes.ep3.desc': 'Cómo usar pensamiento analítico para diseñar la vida que realmente quieres.',
+
+    // Host
+    'host.label': 'La conductora',
+    'host.name': 'Majo',
+    'host.bio': 'Senior Manager de Analytics. Escritora. Peruana en Toronto. Cuento datos como historias y historias como datos.',
+    'host.instagram': 'Instagram',
+    'host.linkedin': 'LinkedIn',
+
+    // Platforms
+    'platforms.label': 'Dónde escuchar',
+    'platforms.subtitle': 'Disponible en tu plataforma favorita',
+
+    // Newsletter
+    'newsletter.label': 'The Majo Letter',
+    'newsletter.headline': 'Cada martes a las 7AM, una carta para las que construyen en silencio.',
+    'newsletter.placeholder': 'Tu email',
+    'newsletter.cta': 'Unirme',
+    'newsletter.note': 'Bilingüe. Honesta. Gratis.',
+
+    // Footer
+    'footer.tagline': 'Donde los datos se encuentran con la creatividad.',
+    'footer.by': 'by Majo Cuenta',
   },
   en: {
-    // Hero Section
-    'hero.question': 'What if success was different?',
-    'hero.subtitle': 'Define your own version of success and live according to your priorities',
-    'hero.description': 'Reflections and conversations that help you discover what it really means to succeed for you. Because in the end, it\'s about YOUR priorities, YOUR values, YOUR life.',
-    'hero.host': 'Hosted by',
-    'hero.listenNow': 'Listen Now',
-    'hero.latestEpisodes': 'Latest Episodes',
-    
-    // About Section
-    'about.title': 'Choose your own version of success',
-    'about.question': 'Have you ever wondered if the success you\'re pursuing is really yours?',
-    'about.description1': 'This podcast invites you to reflect on what it really means to succeed according to YOUR priorities, YOUR values, YOUR life.',
-    'about.description2': 'Through conversations with young professionals and experienced mentors,',
-    'about.description2Bold': 'you\'ll discover that you can define your own version of success',
-    'about.description2End': 'and live according to it, regardless of what others say.',
-    'about.feature1Title': 'Your Own Definition',
-    'about.feature1Desc': 'Reflections that help you discover what success really means to you, based on your unique values.',
-    'about.feature2Title': 'Diverse Perspectives',
-    'about.feature2Desc': 'Authentic interviews with young professionals and mentors who have found their unique path to success.',
-    'about.feature3Title': 'Live According to Your Priorities',
-    'about.feature3Desc': 'Practical inspiration to build a life and career aligned with what really matters to you.',
-    
-    // Listen Section
-    'listen.title': 'Listen whenever you want',
-    'listen.subtitle': '20-30 minute episodes perfect for your commute, workout or work break',
-    'listen.allEpisodes': 'All episodes available for free',
-    'listen.followTitle': 'Follow us on Instagram',
-    'listen.followDesc': 'Join our community at @exitoconh for exclusive content and to connect with others who are redefining success.',
-    'listen.followButton': 'Follow @exitoconh'
+    // Nav
+    'nav.listen': 'Listen',
+    'nav.about': 'About',
+    'nav.host': 'The host',
+    'nav.newsletter': 'Newsletter',
+
+    // Hero
+    'hero.title': 'Éxito con H',
+    'hero.subtitle': 'The podcast where success is written with history, hunger, and humanity.',
+    'hero.cta': 'Listen now',
+    'hero.cta2': 'Subscribe to newsletter',
+
+    // About
+    'about.label': 'What it\'s about',
+    'about.text': 'Éxito con H is for those who broke the mold but are still finding their shape. Honest conversations about career, identity, ambition, and a life well lived.',
+    'about.pillar1': 'Mindset',
+    'about.pillar1desc': 'Redefine what success means to you, away from the noise.',
+    'about.pillar2': 'Community',
+    'about.pillar2desc': 'Stories of Latinas building on their own terms.',
+    'about.pillar3': 'Strategy',
+    'about.pillar3desc': 'Data, frameworks, and tools to make decisions with clarity.',
+
+    // Episodes
+    'episodes.label': 'Recent episodes',
+    'episodes.listen': 'Listen',
+    'episodes.min': 'min',
+    'episodes.ep1.title': 'The success no one taught you to seek',
+    'episodes.ep1.desc': 'What happens when you achieve everything they told you to want and still feel something\'s missing?',
+    'episodes.ep2.title': 'Being Latina in corporate America',
+    'episodes.ep2.desc': 'Navigating spaces where you\'re the only one who looks like you, without losing your essence.',
+    'episodes.ep3.title': 'Data, decisions, and real life',
+    'episodes.ep3.desc': 'How to use analytical thinking to design the life you actually want.',
+
+    // Host
+    'host.label': 'The host',
+    'host.name': 'Majo',
+    'host.bio': 'Senior Manager of Analytics. Writer. Peruvian in Toronto. I tell data like stories and stories like data.',
+    'host.instagram': 'Instagram',
+    'host.linkedin': 'LinkedIn',
+
+    // Platforms
+    'platforms.label': 'Where to listen',
+    'platforms.subtitle': 'Available on your favorite platform',
+
+    // Newsletter
+    'newsletter.label': 'The Majo Letter',
+    'newsletter.headline': 'Every Tuesday at 7AM, a letter for those who build in silence.',
+    'newsletter.placeholder': 'Your email',
+    'newsletter.cta': 'Join',
+    'newsletter.note': 'Bilingual. Honest. Free.',
+
+    // Footer
+    'footer.tagline': 'Where data meets creativity.',
+    'footer.by': 'by Majo Cuenta',
   }
 };
