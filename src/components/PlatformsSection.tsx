@@ -1,36 +1,37 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const platforms = [
-  { name: 'Spotify', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', color: 'hover:bg-[#1DB954]/10 hover:text-[#1DB954] hover:border-[#1DB954]/30' },
-  { name: 'Apple Podcasts', url: '#', color: 'hover:bg-[#A855F7]/10 hover:text-[#A855F7] hover:border-[#A855F7]/30' },
-  { name: 'YouTube', url: '#', color: 'hover:bg-[#FF0000]/10 hover:text-[#FF0000] hover:border-[#FF0000]/30' },
-  { name: 'Amazon Music', url: '#', color: 'hover:bg-[#25D1DA]/10 hover:text-[#25D1DA] hover:border-[#25D1DA]/30' },
+  { name: 'Spotify', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', icon: '🎧' },
+  { name: 'Apple Podcasts', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', icon: '🍎' },
+  { name: 'YouTube', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', icon: '▶️' },
+  { name: 'Amazon Music', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', icon: '🎵' },
 ];
 
 const PlatformsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-28 bg-cream">
+    <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <span className="reveal font-body text-sm font-semibold tracking-[0.2em] uppercase text-secondary mb-3 block">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="reveal font-body text-xs font-bold tracking-[0.3em] uppercase text-secondary mb-3 block">
             {t('platforms.label')}
           </span>
-          <p className="reveal reveal-delay-1 font-body text-muted-foreground mb-10">
+          <h2 className="reveal reveal-delay-1 font-display text-3xl md:text-4xl font-bold text-foreground mb-12">
             {t('platforms.subtitle')}
-          </p>
+          </h2>
 
-          <div className="reveal reveal-delay-2 flex flex-wrap justify-center gap-3">
+          <div className="reveal reveal-delay-2 grid grid-cols-2 md:grid-cols-4 gap-4">
             {platforms.map((p) => (
               <a
                 key={p.name}
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-6 py-3 rounded-full border border-border bg-background font-body text-sm font-medium text-foreground transition-all duration-300 ${p.color}`}
+                className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-cream border border-border/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 hover:border-primary/20"
               >
-                {p.name}
+                <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{p.icon}</span>
+                <span className="font-body text-sm font-semibold text-foreground">{p.name}</span>
               </a>
             ))}
           </div>

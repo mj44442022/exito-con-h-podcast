@@ -46,29 +46,32 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 const translations: Record<Language, Record<string, string>> = {
   es: {
     // Nav
-    'nav.listen': 'Escuchar',
+    'nav.listen': 'Episodios',
     'nav.about': 'Sobre el podcast',
-    'nav.host': 'La conductora',
+    'nav.host': 'Majo',
     'nav.newsletter': 'Newsletter',
 
     // Hero
+    'hero.badge': 'Podcast · Newsletter · Comunidad',
     'hero.title': 'Éxito con H',
     'hero.subtitle': 'El podcast donde el éxito se escribe con historia, con hambre y con humanidad.',
     'hero.cta': 'Escuchar ahora',
-    'hero.cta2': 'Suscribirse al newsletter',
+    'hero.cta2': 'Newsletter gratis',
 
     // About
-    'about.label': 'De qué trata',
-    'about.text': 'Éxito con H es para las que rompieron el molde pero siguen buscando su forma. Conversaciones honestas sobre carrera, identidad, ambición y vida bien vivida.',
+    'about.label': 'De qué va esto',
+    'about.text': 'Éxito con H es para las que rompieron el molde pero siguen buscando su forma. Conversaciones reales sobre carrera, identidad, ambición y vida bien vivida.',
     'about.pillar1': 'Mentalidad',
-    'about.pillar1desc': 'Redefine lo que el éxito significa para ti, lejos del ruido.',
+    'about.pillar1desc': 'Redefine lo que el éxito significa para ti. Sin fórmulas, sin ruido.',
     'about.pillar2': 'Comunidad',
-    'about.pillar2desc': 'Historias de latinas que construyen en sus propios términos.',
+    'about.pillar2desc': 'Historias de latinas construyendo en sus propios términos.',
     'about.pillar3': 'Estrategia',
-    'about.pillar3desc': 'Datos, frameworks y herramientas para tomar decisiones con claridad.',
+    'about.pillar3desc': 'Datos, frameworks y herramientas para decidir con claridad.',
 
     // Episodes
-    'episodes.label': 'Episodios recientes',
+    'episodes.label': 'Escucha',
+    'episodes.heading': 'Episodios recientes',
+    'episodes.viewAll': 'Ver todos en Spotify',
     'episodes.listen': 'Escuchar',
     'episodes.min': 'min',
     'episodes.ep1.title': 'El éxito que nadie te enseñó a buscar',
@@ -79,52 +82,57 @@ const translations: Record<Language, Record<string, string>> = {
     'episodes.ep3.desc': 'Cómo usar pensamiento analítico para diseñar la vida que realmente quieres.',
 
     // Host
-    'host.label': 'La conductora',
+    'host.label': 'La voz detrás del mic',
     'host.name': 'Majo',
     'host.bio': 'Senior Manager de Analytics. Escritora. Peruana en Toronto. Cuento datos como historias y historias como datos.',
+    'host.bio2': '"Creo que el éxito más difícil es el que defines tú misma."',
     'host.instagram': 'Instagram',
     'host.linkedin': 'LinkedIn',
 
     // Platforms
-    'platforms.label': 'Dónde escuchar',
-    'platforms.subtitle': 'Disponible en tu plataforma favorita',
+    'platforms.label': 'Escúchalo donde quieras',
+    'platforms.subtitle': 'Disponible en todas las plataformas',
 
     // Newsletter
     'newsletter.label': 'The Majo Letter',
     'newsletter.headline': 'Cada martes a las 7AM, una carta para las que construyen en silencio.',
-    'newsletter.placeholder': 'Tu email',
-    'newsletter.cta': 'Unirme',
-    'newsletter.note': 'Bilingüe. Honesta. Gratis.',
+    'newsletter.desc': 'Data, historias y reflexiones honestas directo a tu inbox. Sin spam, sin relleno.',
+    'newsletter.cta': 'Suscribirme gratis',
+    'newsletter.note': 'Bilingüe · Honesta · 100% gratis',
 
     // Footer
     'footer.tagline': 'Donde los datos se encuentran con la creatividad.',
     'footer.by': 'by Majo Cuenta',
+    'footer.rights': 'Todos los derechos reservados.',
   },
   en: {
     // Nav
-    'nav.listen': 'Listen',
+    'nav.listen': 'Episodes',
     'nav.about': 'About',
-    'nav.host': 'The host',
+    'nav.host': 'Majo',
     'nav.newsletter': 'Newsletter',
 
     // Hero
+    'hero.badge': 'Podcast · Newsletter · Community',
     'hero.title': 'Éxito con H',
     'hero.subtitle': 'The podcast where success is written with history, hunger, and humanity.',
     'hero.cta': 'Listen now',
-    'hero.cta2': 'Subscribe to newsletter',
+    'hero.cta2': 'Free newsletter',
 
     // About
-    'about.label': 'What it\'s about',
-    'about.text': 'Éxito con H is for those who broke the mold but are still finding their shape. Honest conversations about career, identity, ambition, and a life well lived.',
+    'about.label': 'What this is about',
+    'about.text': 'Éxito con H is for those who broke the mold but are still finding their shape. Real conversations about career, identity, ambition, and a life well lived.',
     'about.pillar1': 'Mindset',
-    'about.pillar1desc': 'Redefine what success means to you, away from the noise.',
+    'about.pillar1desc': 'Redefine what success means to you. No formulas, no noise.',
     'about.pillar2': 'Community',
     'about.pillar2desc': 'Stories of Latinas building on their own terms.',
     'about.pillar3': 'Strategy',
     'about.pillar3desc': 'Data, frameworks, and tools to make decisions with clarity.',
 
     // Episodes
-    'episodes.label': 'Recent episodes',
+    'episodes.label': 'Listen',
+    'episodes.heading': 'Recent episodes',
+    'episodes.viewAll': 'See all on Spotify',
     'episodes.listen': 'Listen',
     'episodes.min': 'min',
     'episodes.ep1.title': 'The success no one taught you to seek',
@@ -135,25 +143,27 @@ const translations: Record<Language, Record<string, string>> = {
     'episodes.ep3.desc': 'How to use analytical thinking to design the life you actually want.',
 
     // Host
-    'host.label': 'The host',
+    'host.label': 'The voice behind the mic',
     'host.name': 'Majo',
-    'host.bio': 'Senior Manager of Analytics. Writer. Peruvian in Toronto. I tell data like stories and stories like data.',
+    'host.bio': 'Senior Analytics Manager. Writer. Peruvian in Toronto. I tell data like stories and stories like data.',
+    'host.bio2': '"I believe the hardest success is the one you define yourself."',
     'host.instagram': 'Instagram',
     'host.linkedin': 'LinkedIn',
 
     // Platforms
-    'platforms.label': 'Where to listen',
-    'platforms.subtitle': 'Available on your favorite platform',
+    'platforms.label': 'Listen anywhere',
+    'platforms.subtitle': 'Available on all platforms',
 
     // Newsletter
     'newsletter.label': 'The Majo Letter',
     'newsletter.headline': 'Every Tuesday at 7AM, a letter for those who build in silence.',
-    'newsletter.placeholder': 'Your email',
-    'newsletter.cta': 'Join',
-    'newsletter.note': 'Bilingual. Honest. Free.',
+    'newsletter.desc': 'Data, stories, and honest reflections straight to your inbox. No spam, no filler.',
+    'newsletter.cta': 'Subscribe for free',
+    'newsletter.note': 'Bilingual · Honest · 100% free',
 
     // Footer
     'footer.tagline': 'Where data meets creativity.',
     'footer.by': 'by Majo Cuenta',
+    'footer.rights': 'All rights reserved.',
   }
 };
