@@ -1,96 +1,66 @@
-
-import { Headphones, Play } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Play, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSelector from "./LanguageSelector";
 
 const PodcastHero = () => {
   const { t } = useLanguage();
 
-  const handleListenNowClick = () => {
-    window.open("https://open.spotify.com/episode/20qy4jVvLf250PMyNOWu5L?si=j0CC7scpRwOmOKxHFiPGNA", "_blank");
-  };
-
-  const handleLatestEpisodesClick = () => {
-    window.open("https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl", "_blank");
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-white to-teal-50 overflow-hidden">
-      {/* Language Selector - positioned absolutely in top right */}
+    <section className="relative min-h-screen flex items-center justify-center water-gradient wave-pattern overflow-hidden">
+      {/* Language Selector */}
       <div className="absolute top-6 right-6 z-20">
         <LanguageSelector />
       </div>
 
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-teal-400 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-orange-300 rounded-full blur-3xl"></div>
+      {/* Floating decorative elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[15%] left-[10%] w-64 h-64 rounded-full bg-primary/5 blur-3xl animate-float" />
+        <div className="absolute bottom-[20%] right-[8%] w-80 h-80 rounded-full bg-secondary/5 blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-[60%] left-[50%] w-40 h-40 rounded-full bg-accent/5 blur-3xl animate-float" style={{ animationDelay: '4s' }} />
       </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Logo area */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-8 border border-orange-100">
-                <div className="flex items-center justify-center space-x-2">
-                  <span className="text-5xl font-bold text-orange-500">É</span>
-                  <span className="text-4xl font-bold text-teal-600">xito con</span>
-                </div>
-                <div className="flex justify-center mt-2">
-                  <span className="text-6xl font-bold text-teal-600 tracking-wider">H</span>
-                </div>
-              </div>
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-500 rounded-full"></div>
-            </div>
-          </div>
 
-          {/* Main heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
-            {t('hero.question').split(' ').slice(0, -2).join(' ')}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-teal-600">
-              {t('hero.question').split(' ').slice(-2).join(' ')}
-            </span>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Title */}
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-foreground mb-6 leading-[0.9] tracking-tight opacity-0 animate-fade-up">
+            {t('hero.title')}
           </h1>
-          
+
+          {/* Decorative line */}
+          <div className="w-16 h-[2px] bg-secondary mx-auto mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '0.2s' }} />
+
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+          <p className="font-body text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto opacity-0 animate-fade-up" style={{ animationDelay: '0.3s' }}>
             {t('hero.subtitle')}
           </p>
-          
-          {/* Value proposition */}
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            {t('hero.description')}
-          </p>
 
-          {/* Host info */}
-          <p className="text-lg text-gray-500 mb-12">
-            {t('hero.host')} <span className="font-semibold text-gray-700">Majo Corrales</span>
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              onClick={handleListenNowClick}
-              size="lg" 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-up" style={{ animationDelay: '0.5s' }}>
+            <a
+              href="https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-body font-semibold text-base transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02]"
             >
-              <Play className="mr-2 h-5 w-5" />
-              {t('hero.listenNow')}
-            </Button>
-            <Button 
-              onClick={handleLatestEpisodesClick}
-              variant="outline" 
-              size="lg"
-              className="border-2 border-teal-500 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
+              <Play className="h-5 w-5 transition-transform group-hover:scale-110" />
+              {t('hero.cta')}
+            </a>
+            <a
+              href="https://themajoletter.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 text-foreground font-body font-medium text-base border-b-2 border-secondary/40 pb-1 transition-all duration-300 hover:border-secondary"
             >
-              <Headphones className="mr-2 h-5 w-5" />
-              {t('hero.latestEpisodes')}
-            </Button>
+              {t('hero.cta2')}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
+      </div>
+
+      {/* Bottom scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '1.2s' }}>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent to-primary/30" />
       </div>
     </section>
   );
