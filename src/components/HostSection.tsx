@@ -56,7 +56,7 @@ const HostSection = () => {
                   <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/majocorrales"
+                  href="https://www.linkedin.com/in/majocorralesv/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary-foreground/20 font-body text-sm font-medium text-primary-foreground transition-all duration-300 hover:bg-primary-foreground/10 hover:border-primary-foreground/40"

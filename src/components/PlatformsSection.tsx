@@ -2,9 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const platforms = [
   { name: 'Spotify', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', icon: '🎧' },
-  { name: 'Apple Podcasts', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', icon: '🍎' },
-  { name: 'YouTube', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', icon: '▶️' },
-  { name: 'Amazon Music', url: 'https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl', icon: '🎵' },
+  { name: 'Substack', url: 'https://majocorrales.substack.com/?utm_campaign=profile_chips', icon: '✉️' },
 ];
 
 const PlatformsSection = () => {
@@ -21,17 +19,17 @@ const PlatformsSection = () => {
             {t('platforms.subtitle')}
           </h2>
 
-          <div className="reveal reveal-delay-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="reveal reveal-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
             {platforms.map((p) => (
               <a
                 key={p.name}
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-cream border border-border/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 hover:border-primary/20"
+                className="group flex items-center gap-3 px-8 py-5 rounded-2xl bg-cream border border-border/50 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 hover:border-primary/20"
               >
-                <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{p.icon}</span>
-                <span className="font-body text-sm font-semibold text-foreground">{p.name}</span>
+                <span className="text-2xl group-hover:scale-110 transition-transform duration-300">{p.icon}</span>
+                <span className="font-body text-base font-semibold text-foreground">{p.name}</span>
               </a>
             ))}
           </div>

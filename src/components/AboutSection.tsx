@@ -1,14 +1,16 @@
-import { Lightbulb, Globe, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import sectionAccent from "@/assets/section-accent.jpg";
+import iconMindset from "@/assets/icon-mindset.png";
+import iconCommunity from "@/assets/icon-community.png";
+import iconStrategy from "@/assets/icon-strategy.png";
 
 const AboutSection = () => {
   const { t } = useLanguage();
 
   const pillars = [
-    { icon: Lightbulb, title: t('about.pillar1'), desc: t('about.pillar1desc'), emoji: '💡' },
-    { icon: Globe, title: t('about.pillar2'), desc: t('about.pillar2desc'), emoji: '🌎' },
-    { icon: BarChart3, title: t('about.pillar3'), desc: t('about.pillar3desc'), emoji: '📊' },
+    { title: t('about.pillar1'), desc: t('about.pillar1desc'), icon: iconMindset },
+    { title: t('about.pillar2'), desc: t('about.pillar2desc'), icon: iconCommunity },
+    { title: t('about.pillar3'), desc: t('about.pillar3desc'), icon: iconStrategy },
   ];
 
   return (
@@ -29,14 +31,16 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Pillars - card style with personality */}
+        {/* Pillars with illustration icons */}
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {pillars.map(({ title, desc, emoji }, i) => (
+          {pillars.map(({ title, desc, icon }, i) => (
             <div
               key={title}
               className={`reveal reveal-delay-${i + 1} group relative bg-cream rounded-3xl p-8 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1`}
             >
-              <span className="text-4xl mb-4 block">{emoji}</span>
+              <div className="w-16 h-16 mb-5">
+                <img src={icon} alt={title} className="w-full h-full object-contain" />
+              </div>
               <h3 className="font-display text-2xl font-bold text-foreground mb-2">{title}</h3>
               <p className="font-body text-muted-foreground leading-relaxed text-sm">{desc}</p>
               {/* Accent line */}
