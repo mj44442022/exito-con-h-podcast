@@ -79,6 +79,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', Georgia, serif;
   }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer utilities {
@@ -95,7 +100,7 @@
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
@@ -107,23 +112,4 @@
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
-
-/* Water mesh gradient for hero */
-.water-gradient {
-  background: 
-    radial-gradient(ellipse at 20% 50%, hsl(187 68% 32% / 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, hsl(14 72% 66% / 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, hsl(132 16% 55% / 0.08) 0%, transparent 50%),
-    linear-gradient(160deg, hsl(40 60% 95%) 0%, hsl(40 33% 98%) 50%, hsl(187 68% 32% / 0.05) 100%);
-}
-
-/* Subtle wave pattern overlay */
-.wave-pattern::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q25 0 50 10 Q75 20 100 10' stroke='%231B7A8A' stroke-width='0.5' stroke-opacity='0.07' fill='none'/%3E%3C/svg%3E");
-  background-size: 100px 20px;
-  opacity: 0.5;
-  pointer-events: none;
-}
+.reveal-delay-5 { transition-delay: 0.5s; }
