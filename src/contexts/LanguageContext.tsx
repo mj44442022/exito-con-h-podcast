@@ -151,8 +151,8 @@ const translations: Record<Language, Record<string, string>> = {
     'host.linkedin': 'LinkedIn',
 
     // Platforms
-    'platforms.label': 'Listen anywhere',
-    'platforms.subtitle': 'Available on all platforms',
+    'platforms.label': 'Find me on',
+    'platforms.subtitle': 'Podcast & newsletter',
 
     // Newsletter
     'newsletter.label': 'The Majo Letter',

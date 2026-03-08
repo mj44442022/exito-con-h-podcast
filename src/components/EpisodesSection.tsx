@@ -5,16 +5,45 @@ const EpisodesSection = () => {
   const { t } = useLanguage();
 
   const episodes = [
-    { num: '01', title: t('episodes.ep1.title'), desc: t('episodes.ep1.desc'), duration: 28 },
-    { num: '02', title: t('episodes.ep2.title'), desc: t('episodes.ep2.desc'), duration: 34 },
-    { num: '03', title: t('episodes.ep3.title'), desc: t('episodes.ep3.desc'), duration: 22 },
+    {
+      num: '01',
+      title: 'Cómo crear hábitos cuando tu vida es un caos',
+      desc: 'La realidad sobre crear hábitos que nadie cuenta. Por qué fallar NO significa que seas indisciplinada.',
+      duration: 26,
+      date: 'Oct 2025',
+      url: 'https://open.spotify.com/episode/20tsobAUyofyzP5Rq03Kvn',
+    },
+    {
+      num: '02',
+      title: 'Lento es Rápido: Por qué tomarte tu tiempo te lleva más lejos',
+      desc: '¿Sientes que todos avanzan más rápido que tú? Conversamos sobre estar en proceso de construcción.',
+      duration: 24,
+      date: 'Jul 2025',
+      url: 'https://open.spotify.com/episode/3tApoivyCvuw4FCtcq9UoW',
+    },
+    {
+      num: '03',
+      title: '5 Hábitos para Lograr tus Metas Personales y Profesionales',
+      desc: '5 hábitos concretos que marcaron un antes y un después. Herramientas reales que funcionan.',
+      duration: 23,
+      date: 'Dec 2024',
+      url: 'https://open.spotify.com/episode/20qy4jVvLf250PMyNOWu5L',
+    },
+    {
+      num: '04',
+      title: 'Nuevas amigas, mismas raíces: Cómo crear conexiones',
+      desc: 'Los desafíos de mantener amistades y cómo hacer nuevas, a pesar de los cambios.',
+      duration: 20,
+      date: 'Nov 2024',
+      url: 'https://open.spotify.com/episode/3IF1cfdIPUUPLOOhJ2nUTo',
+    },
   ];
 
   return (
     <section id="episodes" className="py-24 md:py-36 bg-cream">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
-          {/* Header with asymmetric layout */}
+          {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-4">
             <div>
               <span className="reveal font-body text-xs font-bold tracking-[0.3em] uppercase text-secondary mb-3 block">
@@ -40,7 +69,7 @@ const EpisodesSection = () => {
             {episodes.map((ep, i) => (
               <a
                 key={ep.num}
-                href="https://open.spotify.com/show/58LT1VZda7xCGoWH8SFaBl"
+                href={ep.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`reveal reveal-delay-${i + 1} group block bg-background rounded-2xl p-6 md:p-8 border border-border/50 transition-all duration-500 hover:border-secondary/40 hover:shadow-xl hover:shadow-secondary/5 hover:-translate-y-0.5`}
@@ -65,10 +94,13 @@ const EpisodesSection = () => {
                     </p>
                   </div>
 
-                  {/* Duration */}
-                  <span className="font-body text-xs font-medium text-muted-foreground shrink-0 bg-muted px-3 py-1 rounded-full hidden sm:block">
-                    {ep.duration} {t('episodes.min')}
-                  </span>
+                  {/* Duration + date */}
+                  <div className="shrink-0 text-right hidden sm:block">
+                    <span className="font-body text-xs font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                      {ep.duration} min
+                    </span>
+                    <p className="font-body text-xs text-muted-foreground/60 mt-1">{ep.date}</p>
+                  </div>
                 </div>
               </a>
             ))}
